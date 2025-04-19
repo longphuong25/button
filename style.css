@@ -1,0 +1,131 @@
+body{
+    display: flex;/*1 phân tử+magin auto :can giua man hinh ,phan twr do*/
+    min-height: 700px;
+}
+body > div{
+    margin: auto;
+}
+ #toast{
+    position: fixed;
+    top: 32px;
+    right: 32px;
+ }
+
+.toast{
+    background-color: #fff;
+    display: flex;
+    align-items: center;
+border-left: 4px solid;
+border-radius: 2px;/*4 goc uon cong*/
+padding: 8px 0;
+box-shadow: 0 5px 8px rgba(0,0,0,0.8);/*bóng mờ, làm nổi khối*/
+margin-top: 16px;
+min-width: 400px;
+max-width: 450px;
+/*animation:slideInLeft ease 0.5s ,fadeOut linear 1s 3s forwards ;/*3s sau mờ, forwards:mat hăn*/
+transition: all linear .3s;
+}
+@keyframes slideInLeft{
+    from{opacity: 0;
+        transform: translateX(calc(100% + 32px));}
+    to{opacity: 1;
+         transform: translateX(0);}
+}
+@keyframes fadeOut {
+    to {
+        opacity: 0;
+    }
+}
+.toast__icon,
+.toast__close{
+ padding: 0  16px;
+}
+.toast__body{
+    
+    flex-grow: 1;
+}
+.toast__title{
+    font-size: 16px;
+    font-weight: 600;/*độ đậm*/
+    color: #333;
+
+}
+.toast__msg{
+    font-size: 14px;
+    color: #888;
+    margin-top: 12px;
+    line-height: 1.2;
+
+}
+.toast__close{
+color: rgba(0,0,0,0.5);
+font: 20px;
+cursor: pointer;
+}
+.toast__icon{
+    font: 24px;
+    
+}
+
+.toast--success{
+    border-color:#41b2ad ;
+}
+.toast--success .toast__icon{
+ color:#41b2ad ;
+}
+
+.toast--inf{
+    border-color:#79c6e4 ;
+}
+.toast--inf .toast__icon{
+ color: #79c6e4;
+}
+.toast--warning{
+    border-color:#f08235 ;
+}
+.toast--warning .toast__icon{
+ color:#f08235 ;}
+.toast--error{
+    border-color:#f27583;
+}
+.toast--error .toast__icon{
+ color: #f27583;}
+ 
+ .btn{
+    display: inline-block;/*anh hưởng the div: XUONG DONG*/
+    text-decoration: none;/*bo gach duoi do the a*/
+    background-color: transparent;/*trong suốt*/
+    border: none;
+    outline: none;
+    color: #fff;
+    padding:12px 48px;
+    border-radius: 50px;/*bo đầu*/
+    cursor: pointer;
+    transition: opacity 0.2s ease;/*hành đong opacity dien ra 0.2a*/
+    min-width: 120px;
+ }
+ 
+ .btn--success{
+    background-color: #71be34;
+}
+
+.btn--warn{
+    background-color: #ffb702;
+}
+.btn--danger{
+    background-color: #ff623d;
+}
+/*<div class="toast toast--success ">
+          <div class="toast__icon">
+                    <i class="fa fa-check" aria-hidden="true"></i>
+                </div>
+                <div class="toast__body">
+                    <h3 class="toast__title">success</h3>
+                    <p class="toast__msg">Web Application Icons  </p>
+                </div>
+                <div class="toast__close">
+                    <i class="fa fa-times" aria-hidden="true"></i>
+                </div>  
+            
+               
+        </div>*/
